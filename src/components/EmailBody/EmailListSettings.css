@@ -1,0 +1,24 @@
+.emaillist__settings{
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    justify-content: space-between;
+    border-bottom: 1px solid whitesmoke;
+    margin-left: 12px;
+}
+
+.emaillist__settings svg{
+    font-size: 20px;
+}
+
+.emaillist__settings__right{
+    display: flex;
+    align-items: center;
+}
+
+.emaillist__settings__right p{
+    font-size: 13px;
+    font-weight: 500;
+    color: #888;
+}

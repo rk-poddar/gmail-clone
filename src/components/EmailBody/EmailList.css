@@ -1,0 +1,70 @@
+.emaillist{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid whitesmoke;
+    height: 40px;
+    margin-left: 12px;
+}
+
+.emaillist:hover{
+    /* box-shadow: 2px 2px 4px whitesmoke; */
+    background: whitesmoke;
+    cursor: pointer;
+}
+
+.emaillist .emaillist__left{
+    display: flex;
+    align-items: center;
+    min-width: 300px;
+    flex: 20%;
+}
+
+.emaillist .emaillist__left svg{
+    font-size: 20px;
+    color: gray;
+}
+
+.emaillist .emaillist__left h4{
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+
+.emaillist .emaillist__middle{
+    display: flex;
+    align-items: center;
+    flex: 90%;
+}
+
+.emaillist .emaillist__middle__msg{
+    display: flex;
+    width: 90%;
+}
+
+.emaillist .emaillist__middle p{
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 760px;
+}
+
+.emaillist .emaillist__middle p span{
+    font-weight: 500;
+    color: #555;
+}
+
+.emaillist .emaillist__right{
+    display: flex;
+    align-items: center;
+    flex: 9%;
+    justify-content: center;
+}
+
+.emaillist .emaillist__right p{
+    font-size: 12px;
+    font-weight: bold;
+    color: #444;
+}

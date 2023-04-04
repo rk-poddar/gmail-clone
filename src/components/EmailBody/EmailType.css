@@ -1,0 +1,40 @@
+.emailtype{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid whitesmoke;
+    margin-left: 12px;
+}
+
+.emailtype .emailtype__options{
+    display: flex;
+    align-items: center;
+    min-width: 250px;
+    /* width: 100%; */
+    cursor: pointer;
+    border-bottom: 4px #fff;
+}
+
+.emailtype > .emailtype__options svg{
+    font-size: 20px;
+    color: gray;
+}
+
+.emailtype > .emailtype__options p{
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.emailtype > .emailtype__options:hover{
+    background: whitesmoke;
+}
+
+.emailtype__options__active{
+    border-bottom: 4px solid #d93025 !important;
+}
+
+.emailtype__options__active p,
+.emailtype__options__active svg
+{
+    color: #d93025 !important;
+    font-weight: 700 !important;
+}

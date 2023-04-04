@@ -1,0 +1,4 @@
+.emailbody{
+    display: flex;
+    flex-direction: column;
+}
