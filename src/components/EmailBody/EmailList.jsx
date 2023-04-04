@@ -4,10 +4,27 @@ import { IconButton } from '@mui/material';
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import LabelOutlinedIcon from '@mui/icons-material/LabelOutlined';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { openMessage } from '../../features/composeMailSlice';
 
 const EmailList = ({name, subject, message, time}) => {
+    const navigate = useNavigate();
+
+    const dispatch = useDispatch()
+
+    const checkMail = () => {
+        dispatch(openMessage({
+            name,
+            subject,
+            message,
+            time
+        }))
+        navigate('/mail')
+    }
+
     return (
-        <div className='emaillist'>
+        <div className='emaillist' onClick={checkMail}>
             <div className='emaillist__left'>
                 <IconButton>
                     <CheckBoxOutlineBlankIcon />

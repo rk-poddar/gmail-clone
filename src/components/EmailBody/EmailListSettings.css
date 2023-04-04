@@ -12,6 +12,10 @@
     font-size: 20px;
 }
 
+.emaillist__settings__left .MuiButtonBase-root:nth-child(2){
+    margin-left: -15px;
+}
+
 .emaillist__settings__right{
     display: flex;
     align-items: center;
