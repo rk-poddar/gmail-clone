@@ -3,7 +3,7 @@ import './EmailBody.css'
 import EmailListSettings from './EmailListSettings'
 import EmailType from './EmailType'
 import EmailList from './EmailList'
-import db from '../../app/firebase'
+import {db} from '../../app/firebase'
 
 const EmailBody = () => {
 
@@ -27,7 +27,7 @@ const EmailBody = () => {
         {
           emails.map(({id, data}) => {
             return (
-              <EmailList key={id} name={data.to} subject={data.subject} message={data.message} time={new Date(data.timestamp?.seconds*1000).toLocaleTimeString("en-US")}/>
+              <EmailList key={id} name={data.fromName} email={data.from} subject={data.subject} message={data.message} time={new Date(data.timestamp?.seconds*1000).toLocaleTimeString("en-US")}/>
             )
           })
         }

@@ -12,9 +12,20 @@ import { selectedMail } from '../../features/composeMailSlice';
 
 const EmailDetailsHeader = () => {
     const checkMail = useSelector(selectedMail)
+
+    // print the mail
+    const print = () => {
+        var prtContent = document.getElementById("emaildetails__mainbody");
+        var WinPrint = window.open('width=1000,height=900');
+        WinPrint.document.write(prtContent.innerHTML);
+        WinPrint.document.close();
+        WinPrint.focus();
+        WinPrint.print();
+        WinPrint.close();
+      }
     
   return (
-    <div className='emaildetails__mainbody'>
+    <div className='emaildetails__mainbody' id='emaildetails__mainbody'>
         <div className='emaildetails__header'>
             <div className='emaildetails__header__left'>
                 <div><h4>{checkMail.subject}</h4></div>
@@ -25,7 +36,7 @@ const EmailDetailsHeader = () => {
 
             <div className='emaildetails__header__right'>
                 <IconButton>
-                    <PrintIcon/>
+                    <PrintIcon onClick={print}/>
                 </IconButton>
                 <IconButton>
                     <OpenInNewIcon/>
@@ -38,8 +49,8 @@ const EmailDetailsHeader = () => {
                 <IconButton>
                     <Avatar/>
                 </IconButton>
-                <h4>{checkMail.subject}</h4>
-                <p>{checkMail.name}</p>
+                <h4>{checkMail.name}</h4>
+                <p>{checkMail.email}</p>
             </div>
 
             <div className='emaildetails__middleheader__right'>

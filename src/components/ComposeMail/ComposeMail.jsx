@@ -14,10 +14,11 @@ import LockClockIcon from '@mui/icons-material/LockClock';
 import CreateIcon from '@mui/icons-material/Create';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { closeComposeMail, sendComposeMail } from '../../features/composeMailSlice';
-import db from "../../app/firebase"
+import {db} from "../../app/firebase"
 import firebase from 'firebase/compat/app';
+import { selectUser } from '../../features/userSlice';
 
 export const ComposeMail = (props) => {
 
@@ -28,6 +29,8 @@ export const ComposeMail = (props) => {
     const [subject, setSubject] = useState("")
     const [message, setMessage] = useState("")
 
+    const user = useSelector(selectUser)
+
     const formSubmit = (e) => {
         // prevent from page refresh
         e.preventDefault();
@@ -37,6 +40,8 @@ export const ComposeMail = (props) => {
             to: to,
             subject: subject,
             message: message,
+            from: user.email,
+            fromName: user.displayName,
             timestamp: firebase.firestore.FieldValue.serverTimestamp()
         })
 

@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { openMessage } from '../../features/composeMailSlice';
 
-const EmailList = ({name, subject, message, time}) => {
+const EmailList = ({name, email, subject, message, time}) => {
     const navigate = useNavigate();
 
     const dispatch = useDispatch()
@@ -16,6 +16,7 @@ const EmailList = ({name, subject, message, time}) => {
     const checkMail = () => {
         dispatch(openMessage({
             name,
+            email,
             subject,
             message,
             time

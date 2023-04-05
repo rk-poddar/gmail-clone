@@ -7,8 +7,13 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import AppsIcon from '@mui/icons-material/Apps';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../../features/userSlice';
+import firebase from 'firebase/compat/app';
 
-export const Header = () => {
+export const Header = (props) => {
+  const user = useSelector(selectUser)
+
   return (
     <div className='header'>
         <div className='header__left'>
@@ -43,8 +48,8 @@ export const Header = () => {
             <AppsIcon/>
           </IconButton>
 
-          <IconButton>
-            <Avatar src='https://lh3.googleusercontent.com/ogw/AAEL6sio0KgYV1WLv-WW9qphsnPjc1BooFr0F_o-59OR-A=s32-c-mo'/>
+          <IconButton onClick={() => firebase.auth().signOut()}>
+            <Avatar src={user?.photoUrl}/>
           </IconButton>
         </div>
     </div>
