@@ -27,7 +27,7 @@ const Sidebar = () => {
         <Button startIcon={<EditOutlinedIcon/>} className='compose__btn' onClick={() => dispatch(openComposeMail())}>Compose</Button>
         
         <div className='siderbar__div1'>
-            <SidebarOptions Icon={InboxIcon} title="Index" number="224" isActive={true}/>
+            <SidebarOptions Icon={InboxIcon} title="Inbox" number="224" isActive={true}/>
             <SidebarOptions Icon={StarRateIcon} title="Starred" number="20"/>
             <SidebarOptions Icon={WatchLaterIcon} title="Snoozed" number="50"/>
             <SidebarOptions Icon={LabelImportantIcon} title="Important" number="78"/>
